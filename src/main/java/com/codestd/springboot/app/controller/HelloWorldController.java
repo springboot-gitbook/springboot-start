@@ -13,25 +13,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package com.codestd.springboot.app.controller;
 
-package com.codestd.springboot.app;
-
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
- * Spring Boot 启动程序
+ * My first Spring Boot controller
  *
  * @author Jaune
  * @since 1.0.0
  */
-@SpringBootApplication(scanBasePackages = "com.codestd.springboot")
-@EnableWebMvc
-public class Application {
+@RestController
+public class HelloWorldController {
 
-    public static void main(String[] args) {
-        SpringApplication.run(Application.class);
+    @GetMapping("/hello")
+    public String sayHello(){
+        return "Hello World!";
     }
 
 }
