@@ -19,7 +19,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
- * TODO
+ * Freemarker test
  *
  * @author Jaune
  * @since 1.0.0
@@ -29,7 +29,6 @@ public class TestController {
 
     @RequestMapping("/")
     public String test(){
-
         return "index";
     }
 }

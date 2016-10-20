@@ -18,7 +18,8 @@ package com.codestd.springboot.app;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 /**
  * Spring Boot 启动程序
@@ -27,11 +28,15 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
  * @since 1.0.0
  */
 @SpringBootApplication(scanBasePackages = "com.codestd.springboot")
-@EnableWebMvc
-public class Application {
+public class Application extends WebMvcConfigurerAdapter {
 
     public static void main(String[] args) {
         SpringApplication.run(Application.class);
     }
 
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        super.addResourceHandlers(registry);
+        registry.addResourceHandler("classpath:/myjs");
+    }
 }
